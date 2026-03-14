@@ -1022,7 +1022,13 @@ footer p{font-size:.73rem;color:rgba(255,255,255,.28)}
 
 
 <script>
-
+// In your genPDF function, use a relative path
+const logoImg = new Image();
+logoImg.src = 'School Logo.png'; 
+logoImg.onload = function() {
+    doc.addImage(this, 'PNG', 15, 5, 30, 30);
+    // ... rest of your PDF logic
+};
 // ╔══════════════════════════════════════════╗
 // ║  AUTO YEAR — changes every year by itself ║
 // ╚══════════════════════════════════════════╝
